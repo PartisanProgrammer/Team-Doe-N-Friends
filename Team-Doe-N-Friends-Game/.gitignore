@@ -577,7 +577,6 @@ FodyWeavers.xsd
                     
 # Ignore the Cache folder since it is updated locally.
 /[Aa]ssets/Plugins/FMOD/Cache
-/[Aa]ssets/Plugins/FMOD/platforms
 
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
