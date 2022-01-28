@@ -26,7 +26,10 @@ public class PlayerSwitcher : MonoBehaviour{
 
     void Update(){
 
-        ChangeActivePlayer();
+        if (!timedPlayerSwitcher){
+            ChangeActivePlayer();
+        }
+        
     }
 
     void ChangeActivePlayer(){
