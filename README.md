@@ -15,3 +15,4 @@ Team members and roles:
 * Tom Olovsson, Sound Designer [LinkedIn](https://www.linkedin.com/in/tom-olovsson-62a5b799/), [Studio Instagram](https://www.instagram.com/alderbaystudios/)
 * Arvid Lundin, Sound Designer [LinkedIn](https://www.linkedin.com/in/arvid-lundin-a5b18622b/), [Studio Instagram](https://www.instagram.com/alderbaystudios/)
 * Petter Söderberg, Concept Designer
+* Yelena Koselnik, UX [LinkedIn](https://www.linkedin.com/in/koselnik/)
