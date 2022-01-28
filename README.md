@@ -8,7 +8,7 @@ Team members and roles:
 * Efraim Kent, Engineer [LinkedIn](https://www.linkedin.com/in/efraim-kent-01b8a33b/)
 * Felix Kjellberg, Engineer [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/)
 * Jack Fors Ahlberg, Designer [LinkedIn](https://www.linkedin.com/in/jack-fors-ahlberg-9a8657221/)
-* Erick Vanghi, Designer
+* Erick Vanghi, Designer  [LinkedIn] (https://www.linkedin.com/in/erick-vaghi/)
 * Filip Suthawan, Artist [LinkedIn](https://linkedin.com/in/filip-suthawan-07868a182)
 * Ava Blixt, Artist [LinkedIn](https://www.linkedin.com/in/ava-blixt-6830aa195/)
 * Mathilda Christiansson, Artist [LinkedIn](https://www.linkedin.com/in/mathilda-christiansson-107048220/)
