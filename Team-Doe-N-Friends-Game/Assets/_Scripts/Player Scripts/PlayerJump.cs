@@ -11,6 +11,7 @@ public class PlayerJump : MonoBehaviour{
    [Min(0)][SerializeField] float minJumpHeight;
    [Min(0)][SerializeField] float maxJumpHeight;
    [Min(0)][SerializeField] float jumpChargeTime;
+   [SerializeField] bool gravityIsReversed;
    
    float jumpCharge;
     
@@ -22,6 +23,10 @@ public class PlayerJump : MonoBehaviour{
         playerInputs = GetComponent<PlayerInputs>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
+
+        if (gravityIsReversed){
+            rigidbody2D.gravityScale = -rigidbody2D.gravityScale;
+        }
     }
 
     void Update(){
@@ -35,7 +40,13 @@ public class PlayerJump : MonoBehaviour{
             if (groundChecker.IsGrounded){
                 //Lerps between min and max jump height.
                 var jumpForce = Mathf.Lerp(minJumpHeight, maxJumpHeight, jumpCharge);
-                rigidbody2D.AddForce(Vector2.up * jumpForce);
+                if (gravityIsReversed){
+                    rigidbody2D.AddForce(Vector2.up * -jumpForce);
+                }
+                else if(!gravityIsReversed){
+                   rigidbody2D.AddForce(Vector2.up * jumpForce); 
+                }
+                
             }
             jumpCharge = 0f;
         }

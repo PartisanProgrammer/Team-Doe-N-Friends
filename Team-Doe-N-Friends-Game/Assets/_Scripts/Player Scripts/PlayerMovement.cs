@@ -33,29 +33,34 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void Update(){
-        if (groundChecker.IsGrounded){
-            
-            if (!IsSprinting){
-
-                if (!isStartingToSprint){
-                    StartCoroutine(StartSprinting());
-                }
-                
-            }
-            
-        }
-        
-        
-        else if (!groundChecker.IsGrounded){
-
-            if (IsSprinting){
-                StopCoroutine(StartSprinting());
-                IsSprinting = false;
-                currentMoveSpeed = moveSpeed;
-            }
-        }
-        
-        
+        currentMoveSpeed = moveSpeed;
+        // if (IsSprinting){
+        //     currentMoveSpeed = sprintSpeed;
+        // }
+        //
+        // if (groundChecker.IsGrounded){
+        //     
+        //     if (!IsSprinting){
+        //
+        //         if (!isStartingToSprint){
+        //             StartCoroutine(StartSprinting());
+        //         }
+        //         
+        //     }
+        //     
+        // }
+        //
+        //
+        // else if (!groundChecker.IsGrounded){
+        //
+        //     if (IsSprinting){
+        //         StopCoroutine(StartSprinting());
+        //         IsSprinting = false;
+        //         currentMoveSpeed = moveSpeed;
+        //     }
+        // }
+        //
+        //
         
         SetVelocity();
     }

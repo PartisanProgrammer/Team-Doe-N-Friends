@@ -218,3 +218,4 @@ MonoBehaviour:
   minJumpHeight: 100
   maxJumpHeight: 300
   jumpChargeTime: 1
+  gravityIsReversed: 1
