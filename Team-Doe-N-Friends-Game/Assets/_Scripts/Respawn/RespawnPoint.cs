@@ -8,6 +8,7 @@ public class RespawnPoint : MonoBehaviour{
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
             respawnSO.RespawnPosition = col.transform.position;
+            respawnSO.gravityScale = col.GetComponent<Rigidbody2D>().gravityScale;
         }
     }
 }

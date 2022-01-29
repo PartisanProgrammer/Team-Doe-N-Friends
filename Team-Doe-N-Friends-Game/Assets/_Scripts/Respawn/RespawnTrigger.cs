@@ -15,6 +15,7 @@ public class RespawnTrigger : MonoBehaviour{
 
     void Start(){
         player.transform.position = respawnSO.RespawnPosition;
+        player.GetComponent<Rigidbody2D>().gravityScale = respawnSO.gravityScale;
     }
 
     void Update(){
