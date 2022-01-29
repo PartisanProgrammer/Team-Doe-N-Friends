@@ -338,7 +338,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765625, y: 1}
+    m_SensorSize: {x: 1.7773851, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 794015552}
   ListenerNumber: -1
 --- !u!20 &794015558
 Camera:
@@ -1170,7 +1170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.239137
+      value: 11.35
       objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_LocalPosition.y

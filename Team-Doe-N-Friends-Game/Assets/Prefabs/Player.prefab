@@ -142,7 +142,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &300681580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxSpeed: 20
+  lifeState: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   dashDuration: 0.3
   dashSpeed: 20
   animationCurve:
@@ -199,6 +200,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  footsteps:
+    Guid:
+      Data1: 1962687038
+      Data2: 1154196121
+      Data3: -1233383531
+      Data4: 72730897
+    Path: event:/CharRunningFoosteps
 --- !u!114 &300681577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +252,10 @@ MonoBehaviour:
   maxJumpHeight: 350
   jumpChargeTime: 0.2
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
+  JumpSound:
+    Guid:
+      Data1: -300001359
+      Data2: 1309092046
+      Data3: -1332179032
+      Data4: 1927238780
+    Path: event:/CharJump
