@@ -8,8 +8,20 @@ using UnityEngine;
 [RequireComponent(typeof(GroundChecker))]
 public class PlayerMovement : MonoBehaviour{
     [Min(0)][SerializeField] float moveSpeed;
-    [Min(0)][SerializeField] float sprintSpeed;
-    [Range(0,10)][SerializeField] float timeUntilSprinting;
+    [Min(0)] [SerializeField] float maxSpeed;
+
+
+    //Dashing
+    [SerializeField] float dashDuration;
+    // [SerializeField] float doubleClickTime;
+    [Min(0)] [SerializeField] float dashSpeed;
+    [SerializeField] AnimationCurve animationCurve;
+
+    bool IsDashing => Time.time < this.dashStart + dashDuration;
+    bool doubleClickAvailable;
+    float dashStart;
+    float dashStrength;
+    
 
     //IsSprinting should determine if sprinting animation is active or not.
     public bool IsSprinting{
@@ -17,13 +29,14 @@ public class PlayerMovement : MonoBehaviour{
         private set;
     }
 
-    internal float currentMoveSpeed;
+    //internal float currentMoveSpeed;
     
     bool isStartingToSprint;
     
     Rigidbody2D rigidbody;
     PlayerInputs playerInputs;
     GroundChecker groundChecker;
+    Vector2 dashDirection;
 
     void Awake(){
         playerInputs = GetComponent<PlayerInputs>();
@@ -33,51 +46,53 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void Update(){
-        currentMoveSpeed = moveSpeed;
-        // if (IsSprinting){
-        //     currentMoveSpeed = sprintSpeed;
-        // }
-        //
-        // if (groundChecker.IsGrounded){
-        //     
-        //     if (!IsSprinting){
-        //
-        //         if (!isStartingToSprint){
-        //             StartCoroutine(StartSprinting());
-        //         }
-        //         
-        //     }
-        //     
-        // }
-        //
-        //
-        // else if (!groundChecker.IsGrounded){
-        //
-        //     if (IsSprinting){
-        //         StopCoroutine(StartSprinting());
-        //         IsSprinting = false;
-        //         currentMoveSpeed = moveSpeed;
-        //     }
-        // }
-        //
-        //
-        
-        SetVelocity();
+        if (IsDashing){
+            SetDashVelocity();
+        }
+        else{
+            CheckDashImput();
+            SetVelocity();
+        }
+    }
+
+    void CheckDashImput(){
+        if (Input.GetKey(KeyCode.LeftShift)){
+            if (Input.GetKeyDown(KeyCode.A)){
+                this.dashStart = Time.time;
+                DashLeft();
+            }
+            else if (Input.GetKeyDown(KeyCode.D)){
+                this.dashStart = Time.time;
+                DashRight();
+            }
+        }
     }
 
     void SetVelocity(){
-        //Set move Velocity
         var velocity = rigidbody.velocity;
-        velocity = new Vector3(playerInputs.MoveInput * currentMoveSpeed, velocity.y, 0);
+        velocity = new Vector2(playerInputs.MoveInput * moveSpeed, velocity.y);
         rigidbody.velocity = velocity;
     }
-
-    IEnumerator StartSprinting(){
-        isStartingToSprint = true;
-        yield return new WaitForSeconds(timeUntilSprinting);
-        currentMoveSpeed = sprintSpeed;
-        IsSprinting = true;
-        isStartingToSprint = false;
-
+    
+    void DashRight(){
+        dashDirection = Vector2.right;
     }
+
+    void DashLeft(){
+        dashDirection = Vector2.left;
+    }
+    
+    void SetDashVelocity(){
+     
+        float t = Mathf.InverseLerp(this.dashStart, this.dashStart + dashDuration, Time.time); // time between 0 and 1
+        dashStrength = animationCurve.Evaluate(t);
+        rigidbody.velocity = dashDirection * dashStrength * dashSpeed;
+    }
+
+
+    // IEnumerator DoubleClickTimer(){
+    //     doubleClickAvailable = true;
+    //     yield return new WaitForSeconds(doubleClickTime);
+    //     doubleClickAvailable = false;
+    // }
 }
