@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 300681576}
   - component: {fileID: 300681577}
   - component: {fileID: 300681578}
-  - component: {fileID: 4646519537000033425}
+  - component: {fileID: 4523207944568345938}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71658892b6c02984daeafee0738a61db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4646519537000033425
+--- !u!114 &4523207944568345938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +212,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6838309170395335756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7f6da7551f4554dad2231a7a50a199, type: 3}
+  m_Script: {fileID: 11500000, guid: 50962c6d029c7d24f8be5f763dc76537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minJumpHeight: 100
-  maxJumpHeight: 300
-  jumpChargeTime: 1
-  gravityIsReversed: 1
+  minJumpHeight: 3
+  maxJumpHeight: 60
+  jumpChargeTime: 0
+  gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
