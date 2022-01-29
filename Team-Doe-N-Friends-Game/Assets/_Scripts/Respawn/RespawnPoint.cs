@@ -7,8 +7,10 @@ public class RespawnPoint : MonoBehaviour{
     [SerializeField] CharacterHolderSO characterHolderSo;
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
+            var gravity = col.GetComponent<Rigidbody2D>().gravityScale;
             characterHolderSo.respawnSo.RespawnPosition = col.transform.position;
-            characterHolderSo.gravitySo.gravityScale = col.GetComponent<Rigidbody2D>().gravityScale;
+            characterHolderSo.gravitySo.gravityScale = gravity;
+            characterHolderSo.gravitySo.savedGravityScale = gravity;
         }
     }
 }
