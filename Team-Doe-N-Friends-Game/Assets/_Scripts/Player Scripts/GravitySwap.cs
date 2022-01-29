@@ -14,7 +14,7 @@ public class GravitySwap : MonoBehaviour{
 
     public void SwitchGravity(){
         transform.Rotate(Vector3.forward,180);
-       characterHolderSo.gravitySo.ReverseGravity();
+       characterHolderSo.ChangeGravity();
         
     }
 }
