@@ -1331,7 +1331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300681575, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4646519537000033425, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: gravitySo
@@ -1617,6 +1617,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1138370200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6838309170395335756, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+  m_PrefabInstance: {fileID: 880466316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201587536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2498,22 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 300681575, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
   m_PrefabInstance: {fileID: 880466316}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1631224484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138370200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50962c6d029c7d24f8be5f763dc76537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minJumpHeight: 10
+  maxJumpHeight: 20
+  jumpChargeTime: 1
+  gravitySo: {fileID: 11400000, guid: 7783cb5b320390341ab7df62b49f759b, type: 2}
 --- !u!1 &1680048324
 GameObject:
   m_ObjectHideFlags: 0

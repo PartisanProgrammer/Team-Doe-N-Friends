@@ -37,23 +37,23 @@ public class PlayerSwitcher : MonoBehaviour{
 
     void ChangeActivePlayer(){
        
-        if (playerInputs.JumpInputDown){
-            int rigidbodiesAmount = rigidbodies2D.Count;
-            rigidbodies2D[inactivePlayer % rigidbodiesAmount].simulated = false;
-            rigidbodies2D[++inactivePlayer % rigidbodiesAmount].simulated = true;
-            camera.Follow = rigidbodies2D[inactivePlayer % rigidbodiesAmount].gameObject.transform;
+        if (playerInputs.JumpInputUp){
+            SwitchPlayer();
         }
+    }
+
+    public void SwitchPlayer(){
+        int rigidbodiesAmount = rigidbodies2D.Count;
+        rigidbodies2D[inactivePlayer % rigidbodiesAmount].simulated = false;
+        rigidbodies2D[++inactivePlayer % rigidbodiesAmount].simulated = true;
+        camera.Follow = rigidbodies2D[inactivePlayer % rigidbodiesAmount].gameObject.transform;
     }
 
     IEnumerator ChangeActivePlayerTimed(){
 
         while (true){
             yield return new WaitForSeconds(switchDuration);
-            //inactivePlayer++;
-            int rigidbodiesAmount = rigidbodies2D.Count;
-            rigidbodies2D[inactivePlayer % rigidbodiesAmount].simulated = false;
-            rigidbodies2D[++inactivePlayer % rigidbodiesAmount].simulated = true;
-            camera.Follow = rigidbodies2D[inactivePlayer % rigidbodiesAmount].gameObject.transform;
+            SwitchPlayer();
         }
       
         
