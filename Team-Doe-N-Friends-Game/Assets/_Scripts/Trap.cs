@@ -14,13 +14,14 @@ public class Trap : MonoBehaviour{
         rb2D = FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Rigidbody2D>();
     }
 
-    void Update(){
-        dot = Vector3.Dot(rb2D.transform.up.normalized, this.transform.up);
-    }
 
-    void OnTriggerEnter2D(Collider2D col){
-        if (col.CompareTag("Player")){
+    void OnCollisionEnter2D(Collision2D collision){
+        if (collision.transform.CompareTag("Player")){
+            
+            dot = Vector3.Dot(rb2D.transform.up.normalized, this.transform.up);  
+           
             if (dot > 0.7 || dot < -0.7){
+                Debug.Log("AHAAAH");
                 gravitySwap.SwitchGravity();
             }
         }

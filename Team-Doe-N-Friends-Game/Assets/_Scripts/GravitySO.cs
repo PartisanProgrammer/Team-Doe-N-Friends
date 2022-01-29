@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,11 @@ public class GravitySO : ScriptableObject
 {
     [SerializeField] public bool gravityIsReversed;
     [Range(-1,1)][SerializeField] public float gravityScale;
+
+
+    void OnEnable(){
+        gravityScale = 1;
+    }
 
     public void ReverseGravity(){
         gravityScale = -gravityScale;
