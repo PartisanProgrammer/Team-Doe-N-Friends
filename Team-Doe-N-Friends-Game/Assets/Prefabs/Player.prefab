@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 1841837435}
   - component: {fileID: 1841837441}
   - component: {fileID: 1841837442}
+  - component: {fileID: 1270043631}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -198,6 +199,7 @@ MonoBehaviour:
   maxSpeed: 20
   dashChargeReplenishTime: 2
   dashCharges: 1
+  impulseSource: {fileID: 0}
   lifeState: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   dashDuration: 0.3
   dashSpeed: 20
@@ -326,3 +328,56 @@ MonoBehaviour:
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
   lifeStateSo: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   respawnSo: {fileID: 11400000, guid: bb0d07c493d981241beeee7335b7bd57, type: 2}
+--- !u!114 &1270043631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838309170395335756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.67
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0.1, y: 0.08, z: 0}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using FMOD.Studio;
 using UnityEngine;
 [DisallowMultipleComponent]
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour{
     [Min(0)] [SerializeField] float maxSpeed;
     [Min(0)] [SerializeField] float dashChargeReplenishTime;
     [Min(0)] [SerializeField] int dashCharges;
+
+    [SerializeField] CinemachineImpulseSource impulseSource;
 
     [SerializeField] LifeStateSO lifeState;
 
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour{
         playerInputs = GetComponent<PlayerInputs>();
         rigidbody = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         _footstepInstance = FMODUnity.RuntimeManager.CreateInstance(footsteps);
     }
 
@@ -116,6 +120,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     IEnumerator ConsumeDashCharge(){
+        impulseSource.GenerateImpulse();
         dashCharges--;
         yield return new WaitForSeconds(dashChargeReplenishTime);
         dashCharges++;
