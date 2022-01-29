@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour{
 
     bool IsDashing => Time.time < this.dashStart + dashDuration;
     bool doubleClickAvailable;
+    bool hasRotatedLeft;
     float dashStart;
     float dashStrength;
     
@@ -58,20 +59,15 @@ public class PlayerMovement : MonoBehaviour{
 
     void Update(){
         var rotation = transform.rotation;
-        if (Input.GetKeyDown(KeyCode.D)){
-           // transform.Rotate(transform.up,180);
-            
-            //rotation=  Quaternion.Euler(0, 0,rotation.z);
-           // transform.rotation = new Quaternion(0, 0, 0, 0);
+        if (Input.GetKeyDown(KeyCode.D) && hasRotatedLeft){
+            hasRotatedLeft = false;
+            transform.Rotate(0, -180, 0, Space.World);
         }
-        else if (Input.GetKeyDown(KeyCode.A)){
-           // transform.Rotate(transform.up,180);
-            rotation=  Quaternion.Euler(0, 180,rotation.z);
-           // rotation = new Quaternion(0, 180, rotation.z, rotation.w);
-           // transform.rotation = new Quaternion(0, 180, 0, 0);
+        else if (Input.GetKeyDown(KeyCode.A) && !hasRotatedLeft){
+            hasRotatedLeft = true;
+            transform.Rotate(0, 180, 0, Space.World);
         }
-
-        transform.localRotation = rotation;
+        
         //playerInputs.MoveInput > 0
         playFootstepSound();
         if (IsDashing){
