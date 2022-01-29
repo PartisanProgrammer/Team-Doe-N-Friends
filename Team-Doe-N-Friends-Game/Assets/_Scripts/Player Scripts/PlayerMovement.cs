@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour{
     float dashStart;
     float dashStrength;
     
+    
 
     //IsSprinting should determine if sprinting animation is active or not.
     public bool IsSprinting{
@@ -56,6 +57,22 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void Update(){
+        var rotation = transform.rotation;
+        if (Input.GetKeyDown(KeyCode.D)){
+           // transform.Rotate(transform.up,180);
+            
+            //rotation=  Quaternion.Euler(0, 0,rotation.z);
+           // transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.A)){
+           // transform.Rotate(transform.up,180);
+            rotation=  Quaternion.Euler(0, 180,rotation.z);
+           // rotation = new Quaternion(0, 180, rotation.z, rotation.w);
+           // transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
+
+        transform.localRotation = rotation;
+        //playerInputs.MoveInput > 0
         playFootstepSound();
         if (IsDashing){
             SetDashVelocity();
@@ -97,7 +114,7 @@ public class PlayerMovement : MonoBehaviour{
     }
     
     void DashRight(){
-        dashDirection = Vector2.right;
+        dashDirection = Vector2.right;;
     }
 
     void DashLeft(){
@@ -105,7 +122,7 @@ public class PlayerMovement : MonoBehaviour{
     }
     
     void SetDashVelocity(){
-     
+     //add dash sound
         float t = Mathf.InverseLerp(this.dashStart, this.dashStart + dashDuration, Time.time); // time between 0 and 1
         dashStrength = animationCurve.Evaluate(t);
         rigidbody.velocity = dashDirection * dashStrength * dashSpeed;
