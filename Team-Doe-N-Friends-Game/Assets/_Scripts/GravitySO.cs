@@ -5,4 +5,9 @@ using UnityEngine;
 public class GravitySO : ScriptableObject
 {
     [SerializeField] public bool gravityIsReversed;
+    [Range(-1,1)][SerializeField] public float gravityScale;
+
+    public void ReverseGravity(){
+        gravityScale = -gravityScale;
+    }
 }

@@ -15,7 +15,7 @@ public class Trap : MonoBehaviour{
     }
 
     void Update(){
-        dot = Vector3.Dot(rb2D.transform.up.normalized, this.transform.up.normalized);
+        dot = Vector3.Dot(rb2D.transform.up.normalized, this.transform.up);
     }
 
     void OnTriggerEnter2D(Collider2D col){
