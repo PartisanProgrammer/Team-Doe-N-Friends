@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void playFootstepSound(){
-        if (rigidbody.velocity.magnitude > 0.5){
+        if (rigidbody.velocity.x > 0.5){
             _footstepInstance.getPlaybackState(out var playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED){
                 _footstepInstance.start();
