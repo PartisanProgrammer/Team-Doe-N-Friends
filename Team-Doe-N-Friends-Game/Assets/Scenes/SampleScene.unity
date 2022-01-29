@@ -1778,7 +1778,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784233, y: 1}
+    m_SensorSize: {x: 2.8772278, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2750,6 +2750,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 300681576, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+      propertyPath: lifeState
+      value: 
+      objectReference: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
     - target: {fileID: 4646519537000033425, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: gravitySo
       value: 
@@ -2814,7 +2818,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4523207944568345938, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+    - {fileID: 1841837435, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
 --- !u!1001 &3770152283774522149
 PrefabInstance:

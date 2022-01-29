@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour{
     [Min(0)][SerializeField] float moveSpeed;
     [Min(0)] [SerializeField] float maxSpeed;
 
+    [SerializeField] LifeStateSO lifeState;
+
 
     //Dashing
     [SerializeField] float dashDuration;
@@ -56,16 +58,19 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void CheckDashImput(){
-        if (Input.GetKey(KeyCode.LeftShift)){
-            if (Input.GetKeyDown(KeyCode.A)){
-                this.dashStart = Time.time;
-                DashLeft();
-            }
-            else if (Input.GetKeyDown(KeyCode.D)){
-                this.dashStart = Time.time;
-                DashRight();
+        if (lifeState.isAlive){
+            if (Input.GetKey(KeyCode.LeftShift)){
+                if (Input.GetKeyDown(KeyCode.A)){ 
+                    this.dashStart = Time.time; 
+                    DashLeft();
+                }
+                else if (Input.GetKeyDown(KeyCode.D)){
+                    this.dashStart = Time.time;
+                    DashRight();
+                }
             }
         }
+        
     }
 
     void SetVelocity(){
