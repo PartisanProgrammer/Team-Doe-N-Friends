@@ -232,6 +232,13 @@ MonoBehaviour:
       Data3: -1233383531
       Data4: 72730897
     Path: event:/CharRunningFoosteps
+  LandingSound:
+    Guid:
+      Data1: -2101877445
+      Data2: 1182853734
+      Data3: 1913904284
+      Data4: 648324506
+    Path: event:/Landing
 --- !u!114 &300681577
 MonoBehaviour:
   m_ObjectHideFlags: 0

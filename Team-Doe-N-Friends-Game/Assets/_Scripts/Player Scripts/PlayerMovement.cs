@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] AnimationCurve animationCurve;
 
     [SerializeField] FMODUnity.EventReference footsteps;
+    [SerializeField] FMODUnity.EventReference LandingSound;
 
     EventInstance _footstepInstance;
 
@@ -133,6 +134,12 @@ public class PlayerMovement : MonoBehaviour{
         }
         else{
             _footstepInstance.stop(STOP_MODE.IMMEDIATE);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if (col.transform.CompareTag("Ground")){
+            FMODUnity.RuntimeManager.PlayOneShot(LandingSound);
         }
     }
 
