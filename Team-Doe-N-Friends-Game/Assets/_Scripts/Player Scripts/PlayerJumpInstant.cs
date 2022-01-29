@@ -25,6 +25,7 @@ public class PlayerJumpInstant : MonoBehaviour
         playerInputs = GetComponent<PlayerInputs>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
+        jumpInstance = FMODUnity.RuntimeManager.CreateInstance(JumpSound);
 
         reversedGravitySettings = gravitySo.gravityIsReversed;
         if (reversedGravitySettings){
