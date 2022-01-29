@@ -10,6 +10,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour{
     [Min(0)][SerializeField] float moveSpeed;
     [Min(0)] [SerializeField] float maxSpeed;
+    [Min(0)] [SerializeField] float dashChargeReplenishTime;
+    [Min(0)] [SerializeField] int dashCharges;
 
     [SerializeField] LifeStateSO lifeState;
 
@@ -65,18 +67,26 @@ public class PlayerMovement : MonoBehaviour{
 
     void CheckDashImput(){
         if (lifeState.isAlive){
-            if (Input.GetKey(KeyCode.LeftShift)){
-                if (Input.GetKeyDown(KeyCode.A)){ 
+            if (Input.GetKey(KeyCode.LeftShift) ){
+                if (Input.GetKeyDown(KeyCode.A)&& dashCharges >0){ 
                     this.dashStart = Time.time; 
                     DashLeft();
+                    StartCoroutine(ConsumeDashCharge());
                 }
-                else if (Input.GetKeyDown(KeyCode.D)){
+                else if (Input.GetKeyDown(KeyCode.D)&& dashCharges >0){
                     this.dashStart = Time.time;
                     DashRight();
+                    StartCoroutine(ConsumeDashCharge());
                 }
             }
         }
         
+    }
+
+    IEnumerator ConsumeDashCharge(){
+        dashCharges--;
+        yield return new WaitForSeconds(dashChargeReplenishTime);
+        dashCharges++;
     }
 
     void SetVelocity(){
