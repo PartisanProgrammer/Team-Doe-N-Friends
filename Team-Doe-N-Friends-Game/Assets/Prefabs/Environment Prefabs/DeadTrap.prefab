@@ -147,7 +147,7 @@ MonoBehaviour:
     Path: event:/Trap
   Event: 
   PlayEvent: 5
-  StopEvent: 6
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
