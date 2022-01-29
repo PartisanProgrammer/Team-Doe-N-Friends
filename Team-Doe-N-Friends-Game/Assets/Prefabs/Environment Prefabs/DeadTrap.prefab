@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 6231244709248100478}
   - component: {fileID: 6231244709248100473}
   m_Layer: 0
-  m_Name: TrapCollider 1
+  m_Name: DeadTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
