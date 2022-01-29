@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnPoint : MonoBehaviour
-{
-    public static Vector3 SpawnPoint{ get; private set; }
-
+public class RespawnPoint : MonoBehaviour{
+    [SerializeField] RespawnSO respawnSO;
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
-            SpawnPoint = col.transform.position;
+            respawnSO.RespawnPosition = col.transform.position;
         }
     }
 }

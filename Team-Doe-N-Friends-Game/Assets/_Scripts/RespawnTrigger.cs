@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RespawnTrigger : MonoBehaviour{
-    RespawnPoint respawnPoint;
+    [SerializeField] RespawnSO respawnSO;
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
-            col.transform.position = RespawnPoint.SpawnPoint;
+            col.transform.position = respawnSO.RespawnPosition;
         }
     }
 }
