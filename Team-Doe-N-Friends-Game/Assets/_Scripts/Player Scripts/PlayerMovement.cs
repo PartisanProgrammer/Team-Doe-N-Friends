@@ -83,19 +83,33 @@ public class PlayerMovement : MonoBehaviour{
 
     void CheckDashImput(){
         if (lifeState.isAlive){
-            if (Input.GetKey(KeyCode.LeftShift) ){
-                if (Input.GetKeyDown(KeyCode.A)&& dashCharges >0){ 
+            if (Input.GetKey(KeyCode.LeftShift) && dashCharges >0 ){
+
+                if (hasRotatedLeft){
                     this.dashStart = Time.time; 
                     DashLeft();
                     FMODUnity.RuntimeManager.PlayOneShot(Dash);
                     StartCoroutine(ConsumeDashCharge());
                 }
-                else if (Input.GetKeyDown(KeyCode.D)&& dashCharges >0){
+                else if (!hasRotatedLeft){
                     this.dashStart = Time.time;
                     DashRight();
                     FMODUnity.RuntimeManager.PlayOneShot(Dash);
                     StartCoroutine(ConsumeDashCharge());
                 }
+                
+                // if (Input.GetKeyDown(KeyCode.A)&& dashCharges >0){ 
+                //     this.dashStart = Time.time; 
+                //     DashLeft();
+                //     FMODUnity.RuntimeManager.PlayOneShot(Dash);
+                //     StartCoroutine(ConsumeDashCharge());
+                // }
+                // else if (Input.GetKeyDown(KeyCode.D)&& dashCharges >0){
+                //     this.dashStart = Time.time;
+                //     DashRight();
+                //     FMODUnity.RuntimeManager.PlayOneShot(Dash);
+                //     StartCoroutine(ConsumeDashCharge());
+                // }
             }
         }
         
