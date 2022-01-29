@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] AnimationCurve animationCurve;
 
     [SerializeField] FMODUnity.EventReference footsteps;
+    [SerializeField] FMODUnity.EventReference LandingSound;
+    [SerializeField] FMODUnity.EventReference Dash;
 
     EventInstance _footstepInstance;
 
@@ -85,11 +87,13 @@ public class PlayerMovement : MonoBehaviour{
                 if (Input.GetKeyDown(KeyCode.A)&& dashCharges >0){ 
                     this.dashStart = Time.time; 
                     DashLeft();
+                    FMODUnity.RuntimeManager.PlayOneShot(Dash);
                     StartCoroutine(ConsumeDashCharge());
                 }
                 else if (Input.GetKeyDown(KeyCode.D)&& dashCharges >0){
                     this.dashStart = Time.time;
                     DashRight();
+                    FMODUnity.RuntimeManager.PlayOneShot(Dash);
                     StartCoroutine(ConsumeDashCharge());
                 }
             }
@@ -133,6 +137,12 @@ public class PlayerMovement : MonoBehaviour{
         }
         else{
             _footstepInstance.stop(STOP_MODE.IMMEDIATE);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if (col.transform.CompareTag("Ground")){
+            FMODUnity.RuntimeManager.PlayOneShot(LandingSound);
         }
     }
 
