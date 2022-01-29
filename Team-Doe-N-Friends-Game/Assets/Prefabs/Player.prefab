@@ -200,6 +200,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  footsteps:
+    Guid:
+      Data1: 1962687038
+      Data2: 1154196121
+      Data3: -1233383531
+      Data4: 72730897
+    Path: event:/CharRunningFoosteps
 --- !u!114 &300681577
 MonoBehaviour:
   m_ObjectHideFlags: 0
