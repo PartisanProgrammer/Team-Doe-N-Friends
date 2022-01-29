@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80bf4b64fb5211498cc896a9f0426d2, type: 3}
   m_Name: Player Life State
   m_EditorClassIdentifier: 
-  isAlive: 0
+  isAlive: 1

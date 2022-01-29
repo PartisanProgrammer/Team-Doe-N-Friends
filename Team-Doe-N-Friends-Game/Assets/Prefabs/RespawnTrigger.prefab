@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: RespawnTrigger
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78b4c70e18bbc544ae32b6d881898bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnSO: {fileID: 11400000, guid: bb0d07c493d981241beeee7335b7bd57, type: 2}
+  characterHolderSo: {fileID: 11400000, guid: 3818f87f02a3a3e48bafd580a08ad3b5, type: 2}
+  player: {fileID: 0}
 --- !u!61 &5885573376801455786
 BoxCollider2D:
   m_ObjectHideFlags: 0

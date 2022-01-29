@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RespawnTrigger : MonoBehaviour{
-    [SerializeField] RespawnSO respawnSO;
+    [SerializeField] CharacterHolderSO characterHolderSo;
     [SerializeField] GameObject player;
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
@@ -14,8 +14,8 @@ public class RespawnTrigger : MonoBehaviour{
     }
 
     void Start(){
-        player.transform.position = respawnSO.RespawnPosition;
-        player.GetComponent<Rigidbody2D>().gravityScale = respawnSO.gravityScale;
+        player.transform.position = characterHolderSo.respawnSo.RespawnPosition;
+        player.GetComponent<Rigidbody2D>().gravityScale = characterHolderSo.gravitySo.gravityScale;
     }
 
     void Update(){
