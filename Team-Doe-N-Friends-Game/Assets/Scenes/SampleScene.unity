@@ -2817,6 +2817,14 @@ PrefabInstance:
       propertyPath: lifeState
       value: 
       objectReference: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
+    - target: {fileID: 300681576, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+      propertyPath: dashCharges
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 300681576, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+      propertyPath: dashChargeReplenishTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4646519537000033425, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: gravitySo
       value: 
