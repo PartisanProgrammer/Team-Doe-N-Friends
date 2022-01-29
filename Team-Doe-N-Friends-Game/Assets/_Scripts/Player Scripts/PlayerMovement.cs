@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour{
 
 
     void Update(){
+        playFootstepSound();
         if (IsDashing){
             SetDashVelocity();
         }
@@ -111,7 +112,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void playFootstepSound(){
-        if (rigidbody.velocity.x > 0.5){
+        if (rigidbody.velocity.x > 0.5 && rigidbody.velocity.y <= 0.2 || rigidbody.velocity.x < -0.5 && rigidbody.velocity.y <= 0.2){
             _footstepInstance.getPlaybackState(out var playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED){
                 _footstepInstance.start();
