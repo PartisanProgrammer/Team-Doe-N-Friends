@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 [DisallowMultipleComponent]
 [RequireComponent(typeof(PlayerInputs))]
@@ -18,6 +19,10 @@ public class PlayerMovement : MonoBehaviour{
     // [SerializeField] float doubleClickTime;
     [Min(0)] [SerializeField] float dashSpeed;
     [SerializeField] AnimationCurve animationCurve;
+
+    [SerializeField] FMODUnity.EventReference footsteps;
+
+    EventInstance _footstepInstance;
 
     bool IsDashing => Time.time < this.dashStart + dashDuration;
     bool doubleClickAvailable;
@@ -44,6 +49,7 @@ public class PlayerMovement : MonoBehaviour{
         playerInputs = GetComponent<PlayerInputs>();
         rigidbody = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
+        _footstepInstance = FMODUnity.RuntimeManager.CreateInstance(footsteps);
     }
 
 
@@ -92,6 +98,18 @@ public class PlayerMovement : MonoBehaviour{
         float t = Mathf.InverseLerp(this.dashStart, this.dashStart + dashDuration, Time.time); // time between 0 and 1
         dashStrength = animationCurve.Evaluate(t);
         rigidbody.velocity = dashDirection * dashStrength * dashSpeed;
+    }
+
+    void playFootstepSound(){
+        if (rigidbody.velocity.magnitude > 0.5){
+            _footstepInstance.getPlaybackState(out var playbackState);
+            if (playbackState == PLAYBACK_STATE.STOPPED){
+                _footstepInstance.start();
+            }
+        }
+        else{
+            _footstepInstance.stop(STOP_MODE.IMMEDIATE);
+        }
     }
 
 
