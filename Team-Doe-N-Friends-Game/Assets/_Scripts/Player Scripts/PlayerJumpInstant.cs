@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 [DisallowMultipleComponent]
 public class PlayerJumpInstant : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerJumpInstant : MonoBehaviour
     [Min(0)][SerializeField] float maxJumpHeight;
     [Min(0)][SerializeField] float jumpChargeTime;
     [SerializeField] GravitySO gravitySo;
+    [SerializeField] FMODUnity.EventReference JumpSound;
+
+    EventInstance jumpInstance;
    
     float jumpCharge;
     bool reversedGravitySettings;
