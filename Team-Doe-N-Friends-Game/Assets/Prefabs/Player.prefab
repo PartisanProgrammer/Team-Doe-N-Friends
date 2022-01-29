@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxSpeed: 20
-  dashChargeReplenishTime: 10
+  dashChargeReplenishTime: 2
   dashCharges: 1
   lifeState: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   dashDuration: 0.3
