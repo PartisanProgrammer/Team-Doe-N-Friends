@@ -43,6 +43,7 @@ public class PlayerJumpInstant : MonoBehaviour
             if (groundChecker.IsGrounded){
                 //Lerps between min and max jump height.
                 var jumpForce = Mathf.Lerp(minJumpHeight, maxJumpHeight, jumpCharge);
+                PlayJumpSound();
                 if (reversedGravitySettings){
                     rigidbody2D.AddForce(Vector2.up * -jumpForce);
                 }
@@ -52,6 +53,13 @@ public class PlayerJumpInstant : MonoBehaviour
                 
             }
             jumpCharge = 0f;
+        }
+    }
+
+    void PlayJumpSound(){
+        jumpInstance.getPlaybackState(out var playbackState);
+        if (playbackState == PLAYBACK_STATE.STOPPED){
+            jumpInstance.start();
         }
     }
 }
