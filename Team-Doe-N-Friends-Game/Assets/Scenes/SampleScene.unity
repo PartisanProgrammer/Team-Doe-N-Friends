@@ -1805,7 +1805,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 4.3373137, y: 1}
+    m_SensorSize: {x: 5.4419475, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2811,6 +2811,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+--- !u!1001 &637694406035718741
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.37199998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4082829
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3979221599840408886, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730205983882606042, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: darkWorld
+      value: 
+      objectReference: {fileID: 1797714697}
+    - target: {fileID: 5730205983882606042, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: lightWorld
+      value: 
+      objectReference: {fileID: 1594468494}
+    - target: {fileID: 7858486302067215740, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
+      propertyPath: m_Name
+      value: WorldSwitcher
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 401e4c68d49e84a4bb3f22c46c0d5e7d, type: 3}
 --- !u!1001 &3770152283774522149
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,11 +6,14 @@ using UnityEngine;
 public class Trap : MonoBehaviour{
     Rigidbody2D rb2D;
     GravitySwap gravitySwap;
+    WorldSwitcher worldSwitcher;
+    
 
     float dot;
 
     void Start(){
         gravitySwap = FindObjectOfType<GravitySwap>();
+        worldSwitcher = FindObjectOfType<WorldSwitcher>();
         rb2D = FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -23,6 +26,7 @@ public class Trap : MonoBehaviour{
             if (dot > 0.7 || dot < -0.7){
                 Debug.Log("AHAAAH");
                 gravitySwap.SwitchGravity();
+                worldSwitcher.SwitchWorld();
             }
         }
     }
