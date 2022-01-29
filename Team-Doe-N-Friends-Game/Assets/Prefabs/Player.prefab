@@ -175,8 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   maxSpeed: 20
-  dashChargeReplenishTime: 10
-  dashCharges: 2
+  dashChargeReplenishTime: 2
+  dashCharges: 1
   lifeState: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   dashDuration: 0.3
   dashSpeed: 20
@@ -193,8 +193,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.031336486
-      value: 1.004607
+      time: 0.020090759
+      value: 1.0021656
       inSlope: 6.5615606
       outSlope: 6.5615606
       tangentMode: 0
@@ -253,8 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minJumpHeight: 10
-  maxJumpHeight: 20
-  jumpChargeTime: 1
+  maxJumpHeight: 420
+  jumpChargeTime: 0.3
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
   JumpSound:
     Guid:

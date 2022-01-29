@@ -4,30 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Trap : MonoBehaviour{
-    Rigidbody2D rb2D;
     GravitySwap gravitySwap;
     WorldSwitcher worldSwitcher;
-    
-
-    float dot;
 
     void Start(){
         gravitySwap = FindObjectOfType<GravitySwap>();
         worldSwitcher = FindObjectOfType<WorldSwitcher>();
-        rb2D = FindObjectOfType<PlayerMovement>().gameObject.GetComponent<Rigidbody2D>();
     }
 
 
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.transform.CompareTag("Player")){
-            
-            dot = Vector3.Dot(rb2D.transform.up.normalized, this.transform.up);  
-           
-            if (dot > 0.7 || dot < -0.7){
-                Debug.Log("AHAAAH");
-                gravitySwap.SwitchGravity();
+            gravitySwap.SwitchGravity();
                 worldSwitcher.SwitchWorld();
-            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if (col.transform.CompareTag("Player")){
+            gravitySwap.SwitchGravity();
+            worldSwitcher.SwitchWorld();
         }
     }
 }

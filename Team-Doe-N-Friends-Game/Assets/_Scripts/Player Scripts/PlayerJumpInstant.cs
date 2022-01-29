@@ -46,10 +46,10 @@ public class PlayerJumpInstant : MonoBehaviour
                 var jumpForce = Mathf.Lerp(minJumpHeight, maxJumpHeight, jumpCharge);
                 PlayJumpSound();
                 if (reversedGravitySettings){
-                    rigidbody2D.AddForce(Vector2.up * -jumpForce);
+                    rigidbody2D.AddForce(transform.up * -jumpForce);
                 }
                 else if(!reversedGravitySettings){
-                    rigidbody2D.AddForce(Vector2.up * jumpForce); 
+                    rigidbody2D.AddForce(transform.up * jumpForce); 
                 }
                 
             }

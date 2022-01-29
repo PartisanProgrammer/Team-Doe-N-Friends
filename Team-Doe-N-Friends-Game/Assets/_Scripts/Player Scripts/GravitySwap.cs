@@ -2,18 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GravitySwap : MonoBehaviour{
-
-    [SerializeField] float rotationDuration = 0.5f;
-    [SerializeField] CharacterHolderSO characterHolderSo;
     
-    float timeStart;
-    float gravity = -1;
+    [SerializeField] CharacterHolderSO characterHolderSo;
 
     public void SwitchGravity(){
-        transform.Rotate(Vector3.forward,180);
+        transform.Rotate(Vector3.forward, 180);
         characterHolderSo.ChangeGravity();
         
     }
