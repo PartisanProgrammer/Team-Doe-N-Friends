@@ -254,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minJumpHeight: 10
   maxJumpHeight: 420
-  jumpChargeTime: 1
+  jumpChargeTime: 0.3
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
   JumpSound:
     Guid:
