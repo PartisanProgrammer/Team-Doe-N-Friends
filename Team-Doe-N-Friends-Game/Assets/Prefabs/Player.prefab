@@ -99,10 +99,10 @@ GameObject:
   - component: {fileID: 300681577}
   - component: {fileID: 300681578}
   - component: {fileID: 4523207944568345938}
-  - component: {fileID: 4271660318907394471}
+  - component: {fileID: 1841837435}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,8 +173,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  sprintSpeed: 10
-  timeUntilSprinting: 3
+  maxSpeed: 20
+  dashDuration: 1
+  dashSpeed: 10
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &300681577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6838309170395335756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50962c6d029c7d24f8be5f763dc76537, type: 3}
   m_Name: 
@@ -220,7 +245,7 @@ MonoBehaviour:
   maxJumpHeight: 60
   jumpChargeTime: 0
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
---- !u!114 &4271660318907394471
+--- !u!114 &1841837435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +254,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6838309170395335756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea00304ac683b74380e4e703e73950c, type: 3}
+  m_Script: {fileID: 11500000, guid: 50962c6d029c7d24f8be5f763dc76537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDuration: 0.5
+  minJumpHeight: 10
+  maxJumpHeight: 20
+  jumpChargeTime: 1
+  gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
