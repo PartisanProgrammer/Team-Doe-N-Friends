@@ -37,14 +37,18 @@ public class WorldSwitcher : MonoBehaviour{
     void ChangeActiveWorld(){
        
         if (playerInputs.JumpInputUp){
-            if (lightWorld.activeInHierarchy){
-                lightWorld.SetActive(false);
-                darkWorld.SetActive(true);
-            }
-            else if (darkWorld.activeInHierarchy){
-                darkWorld.SetActive(false);
-                lightWorld.SetActive(true);
-            }
+            SwitchWorld();
+        }
+    }
+
+    public void SwitchWorld(){
+        if (lightWorld.activeInHierarchy){
+            lightWorld.SetActive(false);
+            darkWorld.SetActive(true);
+        }
+        else if (darkWorld.activeInHierarchy){
+            darkWorld.SetActive(false);
+            lightWorld.SetActive(true);
         }
     }
 
