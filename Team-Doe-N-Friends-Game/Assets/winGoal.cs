@@ -4,11 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class winGoal : MonoBehaviour
-{
-    void Update()
-    {
+public class winGoal : MonoBehaviour{
+    void Update(){
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
 }
