@@ -12,6 +12,7 @@ public class MusicAndAmbienceControl : MonoBehaviour{
     Rigidbody2D playerRB;
     EventInstance ambienceInstance;
     EventInstance musicInstance;
+    PauseMenu pauseMenu;
 
     bool created;
 
@@ -33,6 +34,7 @@ public class MusicAndAmbienceControl : MonoBehaviour{
         musicInstance.start();
         ambienceInstance.start();
         playerRB = FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>();
+        pauseMenu = FindObjectOfType<PauseMenu>();
     }
 
     void Update(){
@@ -47,6 +49,16 @@ public class MusicAndAmbienceControl : MonoBehaviour{
         if (playerRB.gravityScale == 1){
             ambienceInstance.setParameterByName("LightSide", 1);
             musicInstance.setParameterByName("LightSide", 1);
+        }
+
+        if (pauseMenu.gameIsPaused){
+            ambienceInstance.setParameterByName("GamePaused", 1);
+            musicInstance.setParameterByName("GamePaused", 1);
+        }
+
+        if (!pauseMenu.gameIsPaused){
+            ambienceInstance.setParameterByName("GamePaused", 0);
+            musicInstance.setParameterByName("GamePaused", 0);
         }
     }
 }
