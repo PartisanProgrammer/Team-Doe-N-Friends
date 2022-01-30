@@ -35,8 +35,10 @@ public class Trap : MonoBehaviour{
     }
 
     void Update(){
-        var time = Mathf.PingPong((Time.time * trapSpeed), 1);
-       transform.position = Vector2.Lerp(startPosition, endPosition, time);
+        if (shouldMove){
+            var time = Mathf.PingPong((Time.time * trapSpeed), 1);
+            transform.position = Vector2.Lerp(startPosition, endPosition, time);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col){
