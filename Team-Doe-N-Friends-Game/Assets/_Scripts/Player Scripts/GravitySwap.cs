@@ -12,6 +12,12 @@ public class GravitySwap : MonoBehaviour{
     public void SwitchGravity(){
         transform.Rotate(Vector3.right, 180,Space.World);
         characterHolderSo.ChangeGravity();
-        
+        //StartCoroutine(DelayedRotation());
+    }
+
+    IEnumerator DelayedRotation(){
+        yield return new WaitForSeconds(1);
+        transform.Rotate(Vector3.right, 180,Space.World);
+        characterHolderSo.ChangeGravity();
     }
 }
