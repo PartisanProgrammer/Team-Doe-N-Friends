@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,5 @@ public class CharacterHolderSO : MonoBehaviour{
       else if (!lifeStateSo.isAlive){
          lifeStateSo.isAlive = true;
       }
-
    }
-   
-   
-   
 }
