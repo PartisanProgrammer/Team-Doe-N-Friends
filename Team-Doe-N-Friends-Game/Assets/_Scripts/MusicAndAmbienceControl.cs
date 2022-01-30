@@ -41,6 +41,9 @@ public class MusicAndAmbienceControl : MonoBehaviour{
         if (playerRB == null){
             playerRB = FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>();
         }
+        if (pauseMenu == null){
+            pauseMenu = FindObjectOfType<PauseMenu>();
+        }
         if (playerRB.gravityScale == -1){
             ambienceInstance.setParameterByName("LightSide", 0);
             musicInstance.setParameterByName("LightSide", 0);
