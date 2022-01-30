@@ -5,7 +5,6 @@
 Team members and roles:
 * Oliver Källerfors, Engineer [LinkedIn](https://www.linkedin.com/in/oliver-källerfors-358bb21b3/)
 * Jesper Danielsson, Engineer [LinkedIn](https://www.linkedin.com/in/jesper-danielsson-9b7048159/)
-* Efraim Kent, Engineer [LinkedIn](https://www.linkedin.com/in/efraim-kent-01b8a33b/)
 * Felix Kjellberg, Engineer [LinkedIn](https://www.linkedin.com/in/felix-kjellberg-837321228/)
 * Jack Fors Ahlberg, Designer [LinkedIn](https://www.linkedin.com/in/jack-fors-ahlberg-9a8657221/)
 * Erick Vanghi, Designer [LinkedIn](https://www.linkedin.com/in/erick-vaghi/)
