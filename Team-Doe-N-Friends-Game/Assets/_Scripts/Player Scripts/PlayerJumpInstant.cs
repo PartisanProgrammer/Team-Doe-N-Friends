@@ -47,12 +47,10 @@ public class PlayerJumpInstant : MonoBehaviour
         // }
         
         //Jump Charging
-        if (playerInputs.JumpInput){
-            //This value increases as long as player holds space
-            jumpCharge += Time.deltaTime / jumpChargeTime;
-        }
+        
 
         if (playerInputs.JumpInput){
+            jumpCharge += Time.deltaTime / jumpChargeTime;
             if (groundChecker.IsGrounded){
                 //Lerps between min and max jump height.
                 var jumpForce = Mathf.Lerp(minJumpHeight, maxJumpHeight, jumpCharge);

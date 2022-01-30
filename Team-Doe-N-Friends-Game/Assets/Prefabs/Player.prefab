@@ -231,6 +231,7 @@ MonoBehaviour:
   aliveRunningAnimController: {fileID: 9100000, guid: b3326445218640747b670e6aebfb0dca, type: 2}
   deadRunningAnimController: {fileID: 9100000, guid: 6ddf7ffd9da18dd4f9b850f51cb61d5e, type: 2}
   animator: {fileID: 717062821}
+  canToggleAnimator: 1
 --- !u!1 &6838309170395335756
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +456,7 @@ MonoBehaviour:
   gravitySo: {fileID: 11400000, guid: f9e5fab1d6c7dae43a29db8de762e775, type: 2}
   lifeStateSo: {fileID: 11400000, guid: c14b98e25958ddb449b48167627fae5b, type: 2}
   respawnSo: {fileID: 11400000, guid: bb0d07c493d981241beeee7335b7bd57, type: 2}
+  worldStateSo: {fileID: 11400000, guid: 94fe5d8458ac00348adc8700f7580876, type: 2}
 --- !u!114 &1270043631
 MonoBehaviour:
   m_ObjectHideFlags: 0
