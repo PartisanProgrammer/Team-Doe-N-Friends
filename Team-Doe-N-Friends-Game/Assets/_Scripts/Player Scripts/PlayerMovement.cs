@@ -69,11 +69,11 @@ public class PlayerMovement : MonoBehaviour{
     void Update(){
         
         var rotation = transform.rotation;
-        if (Input.GetKeyDown(KeyCode.D) && hasRotatedLeft){
+        if (Input.GetKeyDown(KeyCode.D) && hasRotatedLeft || Input.GetKeyDown(KeyCode.RightArrow) && hasRotatedLeft){
             hasRotatedLeft = false;
             transform.Rotate(0, -180, 0, Space.World);
         }
-        else if (Input.GetKeyDown(KeyCode.A) && !hasRotatedLeft){
+        else if (Input.GetKeyDown(KeyCode.A) && !hasRotatedLeft || Input.GetKeyDown(KeyCode.LeftArrow) && !hasRotatedLeft){
             hasRotatedLeft = true;
             transform.Rotate(0, 180, 0, Space.World);
         }
