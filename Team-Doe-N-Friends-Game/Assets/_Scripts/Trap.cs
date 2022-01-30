@@ -13,14 +13,16 @@ public class Trap : MonoBehaviour{
     [SerializeField] bool shouldMove;
     [SerializeField] Vector2 maxMovementTrap;
     [SerializeField] float trapSpeed;
+    [SerializeField] float movementDelay = 1f;
     
     GravitySwap gravitySwap;
     WorldSwitcher worldSwitcher;
+    GameObject player;
     Vector2 startPosition;
     Vector2 endPosition;
     
     bool canTrigger = true;
-    
+
 
     void Start(){
         gravitySwap = FindObjectOfType<GravitySwap>();
@@ -28,6 +30,7 @@ public class Trap : MonoBehaviour{
         playerAnimationSwitcher = FindObjectOfType<PlayerAnimationSwitcher>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         characterHolderSo = FindObjectOfType<CharacterHolderSO>();
+        player = FindObjectOfType<PlayerMovement>().gameObject;
         if (shouldMove){
             startPosition = transform.position;
             endPosition = startPosition + maxMovementTrap;
@@ -49,6 +52,7 @@ public class Trap : MonoBehaviour{
             impulseSource.GenerateImpulse();
             playerAnimationSwitcher.ChangeRunningAnimationController();
             StartCoroutine(ResetTrap());
+            StartCoroutine(ProhibitMovement());
         }
     }
 
@@ -56,5 +60,12 @@ public class Trap : MonoBehaviour{
         canTrigger = false;
         yield return new WaitForSeconds(trapResetTime);
         canTrigger = true;
+    }
+
+    IEnumerator ProhibitMovement(){
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        yield return new WaitForSeconds(movementDelay);
+        player.GetComponent<PlayerMovement>().enabled = true;
     }
 }
