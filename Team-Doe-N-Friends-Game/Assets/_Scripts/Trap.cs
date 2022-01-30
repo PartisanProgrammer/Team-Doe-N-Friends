@@ -7,6 +7,7 @@ using UnityEngine;
 public class Trap : MonoBehaviour{
     [SerializeField] float trapResetTime = 5;
     [SerializeField] CinemachineImpulseSource impulseSource;
+    [SerializeField] PlayerAnimationSwitcher playerAnimationSwitcher;
     GravitySwap gravitySwap;
     WorldSwitcher worldSwitcher;
 
@@ -16,6 +17,7 @@ public class Trap : MonoBehaviour{
     void Start(){
         gravitySwap = FindObjectOfType<GravitySwap>();
         worldSwitcher = FindObjectOfType<WorldSwitcher>();
+        playerAnimationSwitcher = FindObjectOfType<PlayerAnimationSwitcher>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
@@ -25,6 +27,7 @@ public class Trap : MonoBehaviour{
             gravitySwap.SwitchGravity();
             worldSwitcher.SwitchWorld();
             impulseSource.GenerateImpulse();
+            playerAnimationSwitcher.ChangeRunningAnimationController();
             StartCoroutine(ResetTrap());
         }
     }
@@ -34,6 +37,7 @@ public class Trap : MonoBehaviour{
             gravitySwap.SwitchGravity();
             worldSwitcher.SwitchWorld();
             impulseSource.GenerateImpulse();
+            playerAnimationSwitcher.ChangeRunningAnimationController();
             StartCoroutine(ResetTrap());
         }
     }
