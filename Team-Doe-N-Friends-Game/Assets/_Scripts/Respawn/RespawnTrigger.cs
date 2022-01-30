@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class RespawnTrigger : MonoBehaviour{
     [SerializeField] CharacterHolderSO characterHolderSo;
     [SerializeField] GameObject player;
-    void OnTriggerEnter2D(Collider2D col){
-        if (col.CompareTag("Player")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+
+    WorldSwitcher worldSwitcher;
+
+
+    void Awake(){
+        worldSwitcher = FindObjectOfType<WorldSwitcher>();
     }
 
     void Start(){
@@ -20,7 +22,20 @@ public class RespawnTrigger : MonoBehaviour{
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.R)){
+            characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
+            characterHolderSo.ResetWorldStateToSavedWorldState();
+            worldSwitcher.ChangeWorld();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col){
+        if (col.CompareTag("Player")){
+            characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
+            characterHolderSo.ResetWorldStateToSavedWorldState();
+            worldSwitcher.ChangeWorld();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
 }
