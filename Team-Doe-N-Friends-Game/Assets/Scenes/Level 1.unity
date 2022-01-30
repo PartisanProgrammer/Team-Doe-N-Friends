@@ -1160,7 +1160,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771318, y: 1}
+    m_SensorSize: {x: 1.7796353, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6194,7 +6194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6846858305385209350, guid: b1bb8780e66eca546b94906be51e0c2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.83
+      value: 21.85
       objectReference: {fileID: 0}
     - target: {fileID: 6846858305385209350, guid: b1bb8780e66eca546b94906be51e0c2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8405,6 +8405,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 14707135}
     m_Modifications:
+    - target: {fileID: 8853194706020142279, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
+      propertyPath: movementDelay
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8853194706871150566, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
       propertyPath: m_Name
       value: AliveTrap (2)
@@ -8940,6 +8944,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 14707135}
     m_Modifications:
+    - target: {fileID: 8853194706020142279, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
+      propertyPath: movementDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8853194706871150566, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
       propertyPath: m_Name
       value: AliveTrap
@@ -9424,6 +9432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 14707135}
     m_Modifications:
+    - target: {fileID: 8853194706020142279, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
+      propertyPath: movementDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8853194706871150566, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
       propertyPath: m_Name
       value: AliveTrap (8)
@@ -9870,7 +9882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.85
+      value: 21.34
       objectReference: {fileID: 0}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10363,7 +10375,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1382414299377552093, guid: eaa628f8cffea76448d962b4ca8c66d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.78
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4836442003122846336, guid: eaa628f8cffea76448d962b4ca8c66d9, type: 3}
       propertyPath: m_RootOrder
@@ -11724,6 +11736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 14707135}
     m_Modifications:
+    - target: {fileID: 8853194706020142279, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
+      propertyPath: movementDelay
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8853194706871150566, guid: ce0328a95915242e0a012546a0e64e77, type: 3}
       propertyPath: m_Name
       value: AliveTrap (1)
