@@ -35,28 +35,34 @@ public class MusicAndAmbienceControl : MonoBehaviour{
     }
 
     void Update(){
+
+
+        if (FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>() != null || FindObjectOfType<PauseMenu>() != null){
+            this.enabled = false;
+        }
         if (playerRB == null){
-            playerRB = FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>();
-        }
-        if (pauseMenu == null){
-            pauseMenu = FindObjectOfType<PauseMenu>();
-        }
-        if (playerRB.gravityScale == -1){
-            ambienceInstance.setParameterByName("LightSide", 0);
-            musicInstance.setParameterByName("LightSide", 0);
-        }
+                 playerRB = FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>();
+             }
+             if (pauseMenu == null){
+                 pauseMenu = FindObjectOfType<PauseMenu>();
+             }
+             if (playerRB.gravityScale == -1){
+                 ambienceInstance.setParameterByName("LightSide", 0);
+                 musicInstance.setParameterByName("LightSide", 0);
+             }
+            
+             if (playerRB.gravityScale == 1){
+                 ambienceInstance.setParameterByName("LightSide", 1);
+                 musicInstance.setParameterByName("LightSide", 1);
+             }
+            
+             if (pauseMenu.gameIsPaused){
+                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
+             }
+            
+             if (!pauseMenu.gameIsPaused){
+                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
+             }
 
-        if (playerRB.gravityScale == 1){
-            ambienceInstance.setParameterByName("LightSide", 1);
-            musicInstance.setParameterByName("LightSide", 1);
-        }
-
-        if (pauseMenu.gameIsPaused){
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
-        }
-
-        if (!pauseMenu.gameIsPaused){
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
-        }
     }
 }
