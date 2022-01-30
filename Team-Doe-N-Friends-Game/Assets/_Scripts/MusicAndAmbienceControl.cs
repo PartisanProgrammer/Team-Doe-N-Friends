@@ -41,6 +41,9 @@ public class MusicAndAmbienceControl : MonoBehaviour{
         if (playerRB == null){
             playerRB = FindObjectOfType<PlayerMovement>().GetComponent<Rigidbody2D>();
         }
+        if (pauseMenu == null){
+            pauseMenu = FindObjectOfType<PauseMenu>();
+        }
         if (playerRB.gravityScale == -1){
             ambienceInstance.setParameterByName("LightSide", 0);
             musicInstance.setParameterByName("LightSide", 0);
@@ -52,13 +55,11 @@ public class MusicAndAmbienceControl : MonoBehaviour{
         }
 
         if (pauseMenu.gameIsPaused){
-            ambienceInstance.setParameterByName("GamePaused", 1);
-            musicInstance.setParameterByName("GamePaused", 1);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 1);
         }
 
         if (!pauseMenu.gameIsPaused){
-            ambienceInstance.setParameterByName("GamePaused", 0);
-            musicInstance.setParameterByName("GamePaused", 0);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("GamePaused", 0);
         }
     }
 }
