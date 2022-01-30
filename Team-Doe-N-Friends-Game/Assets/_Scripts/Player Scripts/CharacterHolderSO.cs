@@ -10,7 +10,8 @@ public class CharacterHolderSO : MonoBehaviour{
 
 
    public void ChangeGravity(){
-      StartCoroutine(ReverseGravity());
+      gravitySo.ReverseGravity();
+      GetComponent<Rigidbody2D>().gravityScale = gravitySo.gravityScale;
    }
 
    public void ChangeLifeState(){
@@ -20,12 +21,5 @@ public class CharacterHolderSO : MonoBehaviour{
       else if (!lifeStateSo.isAlive){
          lifeStateSo.isAlive = true;
       }
-
-   }
-
-   IEnumerator ReverseGravity(){
-      gravitySo.ReverseGravity();
-      yield return new WaitForSeconds(1);
-      GetComponent<Rigidbody2D>().gravityScale = gravitySo.gravityScale;
    }
 }
