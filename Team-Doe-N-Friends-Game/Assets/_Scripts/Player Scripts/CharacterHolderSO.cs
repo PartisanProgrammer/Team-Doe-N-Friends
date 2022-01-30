@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,7 @@ public class CharacterHolderSO : MonoBehaviour{
 
 
    public void ChangeGravity(){
-      gravitySo.ReverseGravity();
-      GetComponent<Rigidbody2D>().gravityScale = gravitySo.gravityScale;
+      StartCoroutine(ReverseGravity());
    }
 
    public void ChangeLifeState(){
@@ -22,7 +22,10 @@ public class CharacterHolderSO : MonoBehaviour{
       }
 
    }
-   
-   
-   
+
+   IEnumerator ReverseGravity(){
+      gravitySo.ReverseGravity();
+      yield return new WaitForSeconds(1);
+      GetComponent<Rigidbody2D>().gravityScale = gravitySo.gravityScale;
+   }
 }
