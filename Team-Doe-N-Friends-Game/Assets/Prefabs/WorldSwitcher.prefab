@@ -47,4 +47,3 @@ MonoBehaviour:
   lightWorld: {fileID: 0}
   darkWorld: {fileID: 0}
   switchDuration: 1
-  timedPlayerSwitcher: 1

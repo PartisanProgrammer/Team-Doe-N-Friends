@@ -12,10 +12,12 @@ public class PlayerJumpInstant : MonoBehaviour
     [SerializeField] GravitySO gravitySo;
     [SerializeField] FMODUnity.EventReference JumpSound;
 
+    PlayerAnimationSwitcher playerAnimationSwitcher;
     EventInstance jumpInstance;
    
     float jumpCharge;
     bool reversedGravitySettings;
+    bool activeAnimation = true;
     
     PlayerInputs playerInputs;
     Rigidbody2D rigidbody2D;
@@ -25,7 +27,9 @@ public class PlayerJumpInstant : MonoBehaviour
         playerInputs = GetComponent<PlayerInputs>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
+        playerAnimationSwitcher = GetComponentInChildren<PlayerAnimationSwitcher>();
         jumpInstance = FMODUnity.RuntimeManager.CreateInstance(JumpSound);
+        
 
         reversedGravitySettings = gravitySo.gravityIsReversed;
         if (reversedGravitySettings){
@@ -33,14 +37,20 @@ public class PlayerJumpInstant : MonoBehaviour
         }
     }
 
-    void Update(){
+    void FixedUpdate(){
+        
+        
+        // if (groundChecker.IsGrounded && activeAnimation){
+        //     animator.enabled = true;
+        //     activeAnimation = false;
+        //     
+        // }
+        
         //Jump Charging
-        if (playerInputs.JumpInput){
-            //This value increases as long as player holds space
-            jumpCharge += Time.deltaTime / jumpChargeTime;
-        }
+        
 
         if (playerInputs.JumpInput){
+            jumpCharge += Time.deltaTime / jumpChargeTime;
             if (groundChecker.IsGrounded){
                 //Lerps between min and max jump height.
                 var jumpForce = Mathf.Lerp(minJumpHeight, maxJumpHeight, jumpCharge);
@@ -51,6 +61,7 @@ public class PlayerJumpInstant : MonoBehaviour
                 else if(!reversedGravitySettings){
                     rigidbody2D.AddForce(transform.up * jumpForce); 
                 }
+                playerAnimationSwitcher.SetAnimatorDisabled();
                 
             }
             jumpCharge = 0f;

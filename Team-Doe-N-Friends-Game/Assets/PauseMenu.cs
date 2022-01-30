@@ -1,14 +1,24 @@
+using System;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    
+    [SerializeField] CharacterHolderSO characterHolderSo;
+    [SerializeField] WorldSwitcher worldSwitcher;
     public bool gameIsPaused = false;
     public GameObject pauseMenuUI;
-    
+
+    void Awake(){
+        characterHolderSo = FindObjectOfType<CharacterHolderSO>();
+        worldSwitcher = FindObjectOfType<WorldSwitcher>();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if (gameIsPaused)
             {
@@ -19,6 +29,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void Resume()
@@ -41,6 +52,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Debug.Log("Load Main Menu");
+        
         SceneManager.LoadScene(sceneBuildIndex: 0);
     }
 
@@ -49,6 +61,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
         Debug.Log("restart Level");
+        characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
+        characterHolderSo.ResetWorldStateToSavedWorldState();
+        worldSwitcher.ChangeWorld();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     

@@ -6,7 +6,7 @@ using UnityEngine;
 public class RespawnSO : ScriptableObject{
     [SerializeField] Vector2 startPosition;
     public Vector2 RespawnPosition{ get; set; }
-    
+
 
     void OnEnable(){
         RespawnPosition = startPosition;

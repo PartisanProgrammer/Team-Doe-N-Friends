@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Top Player Gravity
   m_EditorClassIdentifier: 
   gravityIsReversed: 0
-  gravityScale: -1
+  gravityScale: 1
+  savedGravityScale: 1
