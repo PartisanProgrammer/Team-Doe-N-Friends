@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void playFootstepSound(){
-        if (rigidbody.velocity.x > 0.5 && rigidbody.velocity.y <= 0.2 || rigidbody.velocity.x < -0.5 && rigidbody.velocity.y <= 0.2){
+        if (rigidbody.velocity.x > 0.5 && groundChecker.IsGrounded|| rigidbody.velocity.x < -0.5 && groundChecker.IsGrounded){
             _footstepInstance.getPlaybackState(out var playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED){
                 _footstepInstance.start();

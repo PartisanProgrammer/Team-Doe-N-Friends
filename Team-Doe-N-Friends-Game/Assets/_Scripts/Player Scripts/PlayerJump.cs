@@ -31,7 +31,7 @@ public class PlayerJump : MonoBehaviour{
         }
     }
 
-    void Update(){
+    void FixedUpdate(){
         //Jump
         if (playerInputs.JumpInput){
             //This value increases as long as player holds space
