@@ -662,6 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 723b17b0277d93d4e87f38285cf4f966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterHolderSo: {fileID: 0}
+  worldSwitcher: {fileID: 0}
   gameIsPaused: 0
   pauseMenuUI: {fileID: 1445107064073720457}
 --- !u!1 &4338324349455930408
