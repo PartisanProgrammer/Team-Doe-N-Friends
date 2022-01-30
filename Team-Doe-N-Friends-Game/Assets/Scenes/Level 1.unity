@@ -1161,7 +1161,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771739, y: 1}
+    m_SensorSize: {x: 13.453704, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6408,6 +6408,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 653180765}
+    - target: {fileID: 3288135488375589281, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 5486186560674339776, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
       propertyPath: m_Name
       value: RespawnTrigger
@@ -7289,6 +7293,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 653180765}
+    - target: {fileID: 3288135488375589281, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 5486186560674339776, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
       propertyPath: m_Name
       value: RespawnTrigger (1)
@@ -7863,6 +7871,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003988093}
     m_Modifications:
+    - target: {fileID: 6573964184621633204, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7989,6 +8001,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003988093}
     m_Modifications:
+    - target: {fileID: 6573964184621633204, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8320,6 +8336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003988093}
     m_Modifications:
+    - target: {fileID: 6573964184621633204, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -8839,6 +8859,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 653180765}
+    - target: {fileID: 3288135488375589281, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 5486186560674339776, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
       propertyPath: m_Name
       value: RespawnTrigger (4)
@@ -9388,6 +9412,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 653180765}
+    - target: {fileID: 3288135488375589281, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 5486186560674339776, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
       propertyPath: m_Name
       value: RespawnTrigger (2)
@@ -9894,6 +9922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003988093}
     m_Modifications:
+    - target: {fileID: 6573964184621633204, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10453,6 +10485,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 653180765}
+    - target: {fileID: 3288135488375589281, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 5486186560674339776, guid: 431350e67d9b0384481e6a830fa28e63, type: 3}
       propertyPath: m_Name
       value: RespawnTrigger (3)
@@ -10855,6 +10891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003988093}
     m_Modifications:
+    - target: {fileID: 6573964184621633204, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
+      propertyPath: characterHolderSo
+      value: 
+      objectReference: {fileID: 2000335815}
     - target: {fileID: 7848209170264718205, guid: 5d78503d319f74f4a94816cc254cfb37, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -11351,6 +11391,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7974144207518672972, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
   m_PrefabInstance: {fileID: 2000335813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2000335815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1841837442, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+  m_PrefabInstance: {fileID: 2000335813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653180765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b330f1cbf6d2d4942affdfbe9ba9ea0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2001966319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6231244709248100477, guid: 4444f0d7a3502af4599ef3b012de77da, type: 3}
