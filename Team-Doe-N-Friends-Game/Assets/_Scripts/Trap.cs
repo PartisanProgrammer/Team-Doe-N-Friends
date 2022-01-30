@@ -9,9 +9,16 @@ public class Trap : MonoBehaviour{
     [SerializeField] CinemachineImpulseSource impulseSource;
     [SerializeField] PlayerAnimationSwitcher playerAnimationSwitcher;
     [SerializeField] CharacterHolderSO characterHolderSo;
+    
+    [SerializeField] bool shouldMove;
+    [SerializeField] Vector2 maxMovementTrap;
+    [SerializeField] float trapSpeed;
+    
     GravitySwap gravitySwap;
     WorldSwitcher worldSwitcher;
-
+    Vector2 startPosition;
+    Vector2 endPosition;
+    
     bool canTrigger = true;
     
 
@@ -21,8 +28,19 @@ public class Trap : MonoBehaviour{
         playerAnimationSwitcher = FindObjectOfType<PlayerAnimationSwitcher>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         characterHolderSo = FindObjectOfType<CharacterHolderSO>();
+        if (shouldMove){
+            startPosition = transform.position;
+            endPosition = startPosition + maxMovementTrap;
+        }
     }
-    
+
+    void Update(){
+        if (shouldMove){
+            var time = Mathf.PingPong((Time.time * trapSpeed), 1);
+            transform.position = Vector2.Lerp(startPosition, endPosition, time);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col){
         if (col.transform.CompareTag("Player") && canTrigger){
             characterHolderSo.ChangeLifeState();
