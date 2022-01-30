@@ -22,19 +22,7 @@ public class Trap : MonoBehaviour{
         impulseSource = GetComponent<CinemachineImpulseSource>();
         characterHolderSo = FindObjectOfType<CharacterHolderSO>();
     }
-
-
-    void OnCollisionEnter2D(Collision2D collision){
-        if (collision.transform.CompareTag("Player") && canTrigger){
-            characterHolderSo.ChangeLifeState();
-            gravitySwap.SwitchGravity();
-            worldSwitcher.SwitchWorld();
-            impulseSource.GenerateImpulse();
-            playerAnimationSwitcher.ChangeRunningAnimationController();
-            StartCoroutine(ResetTrap());
-        }
-    }
-
+    
     void OnTriggerEnter2D(Collider2D col){
         if (col.transform.CompareTag("Player") && canTrigger){
             characterHolderSo.ChangeLifeState();
