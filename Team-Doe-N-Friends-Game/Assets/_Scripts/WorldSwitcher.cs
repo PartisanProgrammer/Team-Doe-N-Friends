@@ -34,7 +34,7 @@ public class WorldSwitcher : MonoBehaviour{
     
 
     IEnumerator ChangeWorldPlayerTimed(){
-        yield return new WaitForSeconds(switchDuration);
+        yield return new WaitForSeconds(0.3f);
         
         if (lightWorld.activeInHierarchy){
             lightWorld.SetActive(false);
