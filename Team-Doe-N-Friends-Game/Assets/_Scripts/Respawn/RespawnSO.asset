@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3872e146a87804996742e127345e6a, type: 3}
   m_Name: RespawnSO
   m_EditorClassIdentifier: 
-  startPosition: {x: 4.22, y: 1.67}
+  startPosition: {x: -5.615936, y: -2.132737}
