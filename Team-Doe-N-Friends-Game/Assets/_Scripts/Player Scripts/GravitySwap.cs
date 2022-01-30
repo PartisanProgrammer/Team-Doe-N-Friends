@@ -10,7 +10,9 @@ public class GravitySwap : MonoBehaviour{
     [SerializeField] CharacterHolderSO characterHolderSo;
 
     public void SwitchGravity(){
-        StartCoroutine(DelayedRotation());
+        transform.Rotate(Vector3.right, 180,Space.World);
+        characterHolderSo.ChangeGravity();
+        //StartCoroutine(DelayedRotation());
     }
 
     IEnumerator DelayedRotation(){
