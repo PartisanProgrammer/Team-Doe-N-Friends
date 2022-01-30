@@ -8,6 +8,7 @@ public class Trap : MonoBehaviour{
     [SerializeField] float trapResetTime = 5;
     [SerializeField] CinemachineImpulseSource impulseSource;
     [SerializeField] PlayerAnimationSwitcher playerAnimationSwitcher;
+    [SerializeField] CharacterHolderSO characterHolderSo;
     GravitySwap gravitySwap;
     WorldSwitcher worldSwitcher;
 
@@ -19,10 +20,12 @@ public class Trap : MonoBehaviour{
         worldSwitcher = FindObjectOfType<WorldSwitcher>();
         playerAnimationSwitcher = FindObjectOfType<PlayerAnimationSwitcher>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        characterHolderSo = FindObjectOfType<CharacterHolderSO>();
     }
-
+    
     void OnTriggerEnter2D(Collider2D col){
         if (col.transform.CompareTag("Player") && canTrigger){
+            characterHolderSo.ChangeLifeState();
             gravitySwap.SwitchGravity();
             worldSwitcher.SwitchWorld();
             impulseSource.GenerateImpulse();

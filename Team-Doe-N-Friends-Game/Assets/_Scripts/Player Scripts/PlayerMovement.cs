@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void CheckDashImput(){
-        if (lifeState.isAlive){
+        if (!lifeState.isAlive){
             if (Input.GetKey(KeyCode.LeftShift) && dashCharges >0 ){
 
                 if (hasRotatedLeft){
