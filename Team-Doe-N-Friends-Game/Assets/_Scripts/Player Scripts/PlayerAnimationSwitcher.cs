@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
+
 using UnityEngine;
 
 public class PlayerAnimationSwitcher : MonoBehaviour{
-   [SerializeField] AnimatorController aliveRunningAnimController;
-   [SerializeField] AnimatorController deadRunningAnimController;
+   [SerializeField] RuntimeAnimatorController aliveRunningAnimController;
+   [SerializeField] RuntimeAnimatorController deadRunningAnimController;
    [SerializeField] Animator animator;
    [HideInInspector] public bool canToggleAnimator = true;
 
