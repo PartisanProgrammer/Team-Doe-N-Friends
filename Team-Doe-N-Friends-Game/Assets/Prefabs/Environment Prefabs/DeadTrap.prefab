@@ -128,11 +128,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapResetTime: 3
   impulseSource: {fileID: 0}
-  playerAnimationSwitcher: {fileID: 0}
   characterHolderSo: {fileID: 0}
+  activatesDeathMode: 1
   shouldMove: 0
   maxMovementTrap: {x: 0, y: 0}
   trapSpeed: 0
+  movementDelay: 1
 --- !u!114 &4974299041929504362
 MonoBehaviour:
   m_ObjectHideFlags: 0

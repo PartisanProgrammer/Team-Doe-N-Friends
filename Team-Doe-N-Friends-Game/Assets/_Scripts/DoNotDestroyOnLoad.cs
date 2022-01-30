@@ -7,5 +7,6 @@ public class DoNotDestroyOnLoad : MonoBehaviour
 {
     void Awake(){
         DontDestroyOnLoad(this);
+        
     }
 }

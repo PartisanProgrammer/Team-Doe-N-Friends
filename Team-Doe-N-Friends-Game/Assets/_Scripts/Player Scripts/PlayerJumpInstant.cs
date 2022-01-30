@@ -31,10 +31,10 @@ public class PlayerJumpInstant : MonoBehaviour
         jumpInstance = FMODUnity.RuntimeManager.CreateInstance(JumpSound);
         
 
-        reversedGravitySettings = gravitySo.gravityIsReversed;
-        if (reversedGravitySettings){
-            rigidbody2D.gravityScale = -rigidbody2D.gravityScale;
-        }
+        // reversedGravitySettings = gravitySo.gravityIsReversed;
+        // if (reversedGravitySettings){
+        //     rigidbody2D.gravityScale = -rigidbody2D.gravityScale;
+        // }
     }
 
     void FixedUpdate(){

@@ -9,10 +9,12 @@ public class RespawnTrigger : MonoBehaviour{
     [SerializeField] GameObject player;
 
     WorldSwitcher worldSwitcher;
+    WorldController worldController;
 
 
     void Awake(){
         worldSwitcher = FindObjectOfType<WorldSwitcher>();
+        worldController = FindObjectOfType<WorldController>();
     }
 
     void Start(){
@@ -22,20 +24,39 @@ public class RespawnTrigger : MonoBehaviour{
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.R)){
-            characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
-            characterHolderSo.ResetWorldStateToSavedWorldState();
-            worldSwitcher.ChangeWorld();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
+            Respawn();
         }
     }
     void OnTriggerEnter2D(Collider2D col){
         if (col.CompareTag("Player")){
-            characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
-            characterHolderSo.ResetWorldStateToSavedWorldState();
-            worldSwitcher.ChangeWorld();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
+            Respawn();
+
         }
+    }
+
+
+    public void Respawn(){
+        if (characterHolderSo.lifeStateSo.isAlive && characterHolderSo.lifeStateSo.savedIsAliveState){
+            worldController.SetWorldToAlive();
+        }
+        if (characterHolderSo.lifeStateSo.isAlive && !characterHolderSo.lifeStateSo.savedIsAliveState){
+            worldController.SetWorldToDead();
+            characterHolderSo.lifeStateSo.isAlive = false;
+            characterHolderSo.Turn();
+        }
+        if (!characterHolderSo.lifeStateSo.isAlive && characterHolderSo.lifeStateSo.savedIsAliveState){
+            worldController.SetWorldToAlive();
+            characterHolderSo.lifeStateSo.isAlive = true;
+            characterHolderSo.Turn();
+        }
+        if (!characterHolderSo.lifeStateSo && !characterHolderSo.lifeStateSo.savedIsAliveState){
+            worldController.SetWorldToDead();
+        }
+            
+            
+        //characterHolderSo.lifeStateSo.isAlive = characterHolderSo.lifeStateSo.savedIsAliveState;
+        characterHolderSo.ResetWorldStateToSavedWorldState();
+        //worldSwitcher.ChangeWorld();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

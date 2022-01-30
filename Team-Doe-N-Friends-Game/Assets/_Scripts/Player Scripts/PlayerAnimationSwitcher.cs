@@ -11,32 +11,40 @@ public class PlayerAnimationSwitcher : MonoBehaviour{
 
 
 
-   public void ChangeRunningAnimationController(){
+   // public void ChangeRunningAnimationController(){
+   //
+   //    var animatorController = animator.runtimeAnimatorController;
+   //    
+   //    if (animatorController == aliveRunningAnimController){
+   //       animator.runtimeAnimatorController = deadRunningAnimController;
+   //    }
+   //    else if (animatorController == deadRunningAnimController){
+   //       animator.runtimeAnimatorController = aliveRunningAnimController;
+   //    }
+   // }
 
-      var animatorController = animator.runtimeAnimatorController;
-      
-      if (animatorController == aliveRunningAnimController){
-         animator.runtimeAnimatorController = deadRunningAnimController;
-      }
-      else if (animatorController == deadRunningAnimController){
-         animator.runtimeAnimatorController = aliveRunningAnimController;
-      }
+   public void SetAliveAnimator(){
+      animator.runtimeAnimatorController = aliveRunningAnimController;
    }
 
-   public void ToggleAnimation(){
-      if (canToggleAnimator){
-         if (animator.enabled){
-            animator.enabled = false;
-            StartCoroutine(ToggleTimer());
-
-         }
-         else if (animator.enabled == false){
-            animator.enabled = true;
-            StartCoroutine(ToggleTimer());
-         }
-      }
-      
+   public void SetDeadAnimator(){
+      animator.runtimeAnimatorController = deadRunningAnimController;
    }
+
+   // public void ToggleAnimation(){
+   //    if (canToggleAnimator){
+   //       if (animator.enabled){
+   //          animator.enabled = false;
+   //          StartCoroutine(ToggleTimer());
+   //
+   //       }
+   //       else if (animator.enabled == false){
+   //          animator.enabled = true;
+   //          StartCoroutine(ToggleTimer());
+   //       }
+   //    }
+   //    
+   // }
 
    public void SetAnimatorDisabled(){
       animator.enabled = false;

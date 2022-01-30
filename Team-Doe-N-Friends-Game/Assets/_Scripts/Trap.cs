@@ -5,18 +5,17 @@ using Cinemachine;
 using UnityEngine;
 
 public class Trap : MonoBehaviour{
-    [SerializeField] float trapResetTime = 5;
+    [SerializeField] float trapResetTime = 1;
     [SerializeField] CinemachineImpulseSource impulseSource;
-    [SerializeField] PlayerAnimationSwitcher playerAnimationSwitcher;
     [SerializeField] CharacterHolderSO characterHolderSo;
-    
+
+    [SerializeField] bool activatesDeathMode;
     [SerializeField] bool shouldMove;
     [SerializeField] Vector2 maxMovementTrap;
     [SerializeField] float trapSpeed;
     [SerializeField] float movementDelay = 1f;
-    
-    GravitySwap gravitySwap;
-    WorldSwitcher worldSwitcher;
+
+    WorldController worldController;
     GameObject player;
     Vector2 startPosition;
     Vector2 endPosition;
@@ -24,10 +23,8 @@ public class Trap : MonoBehaviour{
     bool canTrigger = true;
 
 
-    void Start(){
-        gravitySwap = FindObjectOfType<GravitySwap>();
-        worldSwitcher = FindObjectOfType<WorldSwitcher>();
-        playerAnimationSwitcher = FindObjectOfType<PlayerAnimationSwitcher>();
+    void Awake(){
+        worldController = FindObjectOfType<WorldController>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         characterHolderSo = FindObjectOfType<CharacterHolderSO>();
         player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -46,13 +43,19 @@ public class Trap : MonoBehaviour{
 
     void OnTriggerEnter2D(Collider2D col){
         if (col.transform.CompareTag("Player") && canTrigger){
-            characterHolderSo.ChangeLifeState();
-            gravitySwap.SwitchGravity();
-            worldSwitcher.SwitchWorld();
+
+            if (activatesDeathMode){
+                worldController.SetWorldToDead();
+                characterHolderSo.Turn(); //Turns 180
+            }
+            else if (!activatesDeathMode){
+                worldController.SetWorldToAlive();
+                characterHolderSo.Turn(); //Turns 180
+            }
             impulseSource.GenerateImpulse();
-            playerAnimationSwitcher.ChangeRunningAnimationController();
             StartCoroutine(ResetTrap());
             StartCoroutine(ProhibitMovement());
+            
         }
     }
 

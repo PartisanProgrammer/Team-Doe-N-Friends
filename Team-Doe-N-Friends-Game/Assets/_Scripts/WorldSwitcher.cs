@@ -10,10 +10,21 @@ public class WorldSwitcher : MonoBehaviour{
     [SerializeField] float switchDuration;
 
     CharacterHolderSO characterHolderSo;
+    public static WorldSwitcher instance;
 
     void Awake(){
         characterHolderSo = FindObjectOfType<CharacterHolderSO>();
 
+        
+            if(instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         
     }
 
@@ -22,29 +33,36 @@ public class WorldSwitcher : MonoBehaviour{
     }
 
     public void ChangeWorld(){
-        if (characterHolderSo.worldStateSo.savedWorldIsInLightState){
-            lightWorld.SetActive(true);
-            darkWorld.SetActive(false);
-        }
         if (!characterHolderSo.worldStateSo.savedWorldIsInLightState){
-            lightWorld.SetActive(false);
-            darkWorld.SetActive(true);
+            ChangeWorldToAlive();
         }
+        if (characterHolderSo.worldStateSo.savedWorldIsInLightState){
+            ChangeWorldToDead();
+        }
+    }
+
+    public void ChangeWorldToDead(){
+        lightWorld.SetActive(false);
+        darkWorld.SetActive(true);
+    }
+    public void ChangeWorldToAlive(){
+        lightWorld.SetActive(true);
+        darkWorld.SetActive(false);
     }
     
 
     IEnumerator ChangeWorldPlayerTimed(){
         yield return new WaitForSeconds(0.3f);
         
-        if (lightWorld.activeInHierarchy){
+        if (characterHolderSo.worldStateSo.worldIsInLightState){
             lightWorld.SetActive(false);
             darkWorld.SetActive(true);
-            characterHolderSo.worldStateSo.worldIsInLightState = false;
+           // characterHolderSo.worldStateSo.worldIsInLightState = false;
         }
-        else if (darkWorld.activeInHierarchy){
+        else if (!characterHolderSo.worldStateSo.worldIsInLightState){
             darkWorld.SetActive(false);
             lightWorld.SetActive(true); 
-            characterHolderSo.worldStateSo.worldIsInLightState = true;
+           // characterHolderSo.worldStateSo.worldIsInLightState = true;
         }
     }
 

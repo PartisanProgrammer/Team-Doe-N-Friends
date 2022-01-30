@@ -10,10 +10,10 @@ public class RespawnPoint : MonoBehaviour{
         if (col.CompareTag("Player")){
             var gravity = col.GetComponent<Rigidbody2D>().gravityScale;
             characterHolderSo.respawnSo.RespawnPosition = col.transform.position;
-            characterHolderSo.gravitySo.gravityScale = gravity;
-            characterHolderSo.gravitySo.savedGravityScale = gravity;
+            //characterHolderSo.gravitySo.gravityScale = gravity;
+            //characterHolderSo.gravitySo.savedGravityScale = gravity;
             characterHolderSo.lifeStateSo.savedIsAliveState = characterHolderSo.lifeStateSo.isAlive;
-            characterHolderSo.worldStateSo.savedWorldIsInLightState = characterHolderSo.worldStateSo.worldIsInLightState;
+            //characterHolderSo.worldStateSo.savedWorldIsInLightState = characterHolderSo.worldStateSo.worldIsInLightState;
         }
     }
 }
