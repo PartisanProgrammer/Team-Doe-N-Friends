@@ -30,10 +30,12 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] FMODUnity.EventReference Dash;
 
     EventInstance _footstepInstance;
+    PlayerAnimationSwitcher playerAnimationSwitcher;
 
     bool IsDashing => Time.time < this.dashStart + dashDuration;
     bool doubleClickAvailable;
     bool hasRotatedLeft;
+    bool activeAnimation = true;
     float dashStart;
     float dashStrength;
     
@@ -59,11 +61,13 @@ public class PlayerMovement : MonoBehaviour{
         rigidbody = GetComponent<Rigidbody2D>();
         groundChecker = GetComponent<GroundChecker>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        playerAnimationSwitcher = GetComponentInChildren<PlayerAnimationSwitcher>();
         _footstepInstance = FMODUnity.RuntimeManager.CreateInstance(footsteps);
     }
 
 
     void Update(){
+        
         var rotation = transform.rotation;
         if (Input.GetKeyDown(KeyCode.D) && hasRotatedLeft){
             hasRotatedLeft = false;
@@ -148,7 +152,9 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void playFootstepSound(){
-        if (rigidbody.velocity.x > 0.5 && groundChecker.IsGrounded|| rigidbody.velocity.x < -0.5 && groundChecker.IsGrounded){
+        playerAnimationSwitcher.SetAnimatorDisabled();
+        if (rigidbody.velocity.x > 0.1 && groundChecker.IsGrounded|| rigidbody.velocity.x < -0.1 && groundChecker.IsGrounded){
+            playerAnimationSwitcher.SetAnimatorEnabled();
             _footstepInstance.getPlaybackState(out var playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED){
                 _footstepInstance.start();

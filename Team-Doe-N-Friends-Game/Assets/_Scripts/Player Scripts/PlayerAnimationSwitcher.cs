@@ -7,6 +7,7 @@ public class PlayerAnimationSwitcher : MonoBehaviour{
    [SerializeField] AnimatorController aliveRunningAnimController;
    [SerializeField] AnimatorController deadRunningAnimController;
    [SerializeField] Animator animator;
+   [HideInInspector] public bool canToggleAnimator = true;
 
 
 
@@ -20,5 +21,35 @@ public class PlayerAnimationSwitcher : MonoBehaviour{
       else if (animatorController == deadRunningAnimController){
          animator.runtimeAnimatorController = aliveRunningAnimController;
       }
+   }
+
+   public void ToggleAnimation(){
+      if (canToggleAnimator){
+         if (animator.enabled){
+            animator.enabled = false;
+            StartCoroutine(ToggleTimer());
+
+         }
+         else if (animator.enabled == false){
+            animator.enabled = true;
+            StartCoroutine(ToggleTimer());
+         }
+      }
+      
+   }
+
+   public void SetAnimatorDisabled(){
+      animator.enabled = false;
+   }
+
+   public void SetAnimatorEnabled(){
+      animator.enabled = true;
+   }
+
+
+   IEnumerator ToggleTimer(){
+      canToggleAnimator = false;
+      yield return new WaitForSeconds(0.1f);
+      canToggleAnimator = true;
    }
 }
