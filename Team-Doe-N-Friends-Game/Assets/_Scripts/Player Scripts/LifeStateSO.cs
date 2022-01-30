@@ -4,4 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Life State", menuName = "Life State")]
 public class LifeStateSO : ScriptableObject{
    [SerializeField] public bool isAlive;
+   
+   
+   
 }
