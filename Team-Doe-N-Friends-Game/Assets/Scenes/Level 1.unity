@@ -1160,7 +1160,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7796353, y: 1}
+    m_SensorSize: {x: 7.9835167, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10077,7 +10077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aliveRunningAnimController: {fileID: 9100000, guid: b3326445218640747b670e6aebfb0dca, type: 2}
-  deadRunningAnimController: {fileID: 9100000, guid: 6ddf7ffd9da18dd4f9b850f51cb61d5e, type: 2}
+  deadRunningAnimController: {fileID: 9100000, guid: b1abccab405b2a54f9038d1f46774c37, type: 2}
   animator: {fileID: 1632483628}
   canToggleAnimator: 1
 --- !u!4 &1636264625 stripped
@@ -11293,7 +11293,7 @@ PrefabInstance:
     - target: {fileID: 717062821, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b3326445218640747b670e6aebfb0dca, type: 2}
+      objectReference: {fileID: 9100000, guid: 0ece230cdbe7762438752789c462f268, type: 2}
     - target: {fileID: 6838309170395335756, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: m_Name
       value: Player
