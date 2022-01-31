@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 6087588070004322114}
   - component: {fileID: 2674213428215233075}
   - component: {fileID: 5549917801537653576}
+  - component: {fileID: 5247002747886530961}
   m_Layer: 0
   m_Name: Death Platform 1
   m_TagString: Untagged
@@ -138,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 7637520679666213595}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 3.5589786, y: 1.0584712, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5929019049272915648}
@@ -223,3 +224,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.55, y: 1.81}
   m_EdgeRadius: 0
+--- !u!114 &5247002747886530961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637520679666213595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b3580cf2dc30d49a1d1da4a8401e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shouldMove: 1
+  maxMovement: {x: 0, y: 0.2}
+  moveSpeed: 0.1
