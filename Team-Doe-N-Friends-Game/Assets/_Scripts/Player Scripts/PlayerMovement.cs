@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour{
     bool doubleClickAvailable;
     bool hasRotatedLeft;
     bool activeAnimation = true;
+    bool canPlayLandingSound = true;
     float dashStart;
     float dashStrength;
     
@@ -153,7 +154,7 @@ public class PlayerMovement : MonoBehaviour{
 
     void playFootstepSound(){
         playerAnimationSwitcher.SetAnimatorDisabled();
-        if (rigidbody.velocity.x > 0.1 && groundChecker.IsGrounded|| rigidbody.velocity.x < -0.1 && groundChecker.IsGrounded){
+        if (rigidbody.velocity.x > 0.12 && groundChecker.IsGrounded|| rigidbody.velocity.x < -0.12 && groundChecker.IsGrounded){
             playerAnimationSwitcher.SetAnimatorEnabled();
             _footstepInstance.getPlaybackState(out var playbackState);
             if (playbackState == PLAYBACK_STATE.STOPPED){
@@ -166,15 +167,16 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if (col.transform.CompareTag("Ground")){
+        if (col.transform.CompareTag("Ground") && canPlayLandingSound){
             FMODUnity.RuntimeManager.PlayOneShot(LandingSound);
+            StartCoroutine(LandingSoundTimer());
         }
     }
 
 
-    // IEnumerator DoubleClickTimer(){
-    //     doubleClickAvailable = true;
-    //     yield return new WaitForSeconds(doubleClickTime);
-    //     doubleClickAvailable = false;
-    // }
+    IEnumerator LandingSoundTimer(){
+        canPlayLandingSound = true;
+        yield return new WaitForSeconds(1);
+        canPlayLandingSound = false;
+    }
 }
