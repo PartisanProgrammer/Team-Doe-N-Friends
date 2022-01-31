@@ -1401,7 +1401,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.78, y: 1}
+    m_SensorSize: {x: 1.7807018, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6876,14 +6876,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
-    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
-      propertyPath: maxMovement.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 847190232368405081, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -11943,6 +11935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 300681576, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
+      propertyPath: landingSoundCooldown
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 717062821, guid: 493b6bd86b6efe449b44b81c45496930, type: 3}
       propertyPath: m_Controller
       value: 

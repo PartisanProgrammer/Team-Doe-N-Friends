@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour{
     [Min(0)] [SerializeField] float maxSpeed;
     [Min(0)] [SerializeField] float dashChargeReplenishTime;
     [Min(0)] [SerializeField] int dashCharges;
+    [Min(0)] [SerializeField] float landingSoundCooldown;
 
     [SerializeField] CinemachineImpulseSource impulseSource;
 
@@ -173,10 +174,17 @@ public class PlayerMovement : MonoBehaviour{
         }
     }
 
+    void OnTriggerEnter2D(Collider2D col){
+        if (col.transform.CompareTag("Ground") && canPlayLandingSound){
+            FMODUnity.RuntimeManager.PlayOneShot(LandingSound);
+            StartCoroutine(LandingSoundTimer());
+        }
+    }
+
 
     IEnumerator LandingSoundTimer(){
-        canPlayLandingSound = true;
-        yield return new WaitForSeconds(1);
         canPlayLandingSound = false;
+        yield return new WaitForSeconds(landingSoundCooldown);
+        canPlayLandingSound = true;
     }
 }
