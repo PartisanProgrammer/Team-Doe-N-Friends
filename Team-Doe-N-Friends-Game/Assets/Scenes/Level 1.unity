@@ -969,6 +969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1656800975}
     m_Modifications:
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: moveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6087588070004322114, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1216,6 +1220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: moveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: maxMovement.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1441,7 +1453,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7758621, y: 1}
+    m_SensorSize: {x: 1.7807018, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6403,6 +6415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: moveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: maxMovement.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -8758,6 +8778,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1656800975}
     m_Modifications:
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: maxMovement.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: maxMovement.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6087588070004322114, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9215,6 +9243,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: moveSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: maxMovement.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: maxMovement.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -9628,6 +9668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1656800975}
     m_Modifications:
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: maxMovement.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6087588070004322114, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -10494,6 +10538,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1656800975}
     m_Modifications:
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: maxMovement.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5247002747886530961, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
+      propertyPath: maxMovement.y
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6087588070004322114, guid: 3b761b65e0ae274499cb795327ba4bd3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -10938,6 +10990,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: maxMovement.x
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -11097,6 +11153,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: moveSpeed
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -11600,6 +11660,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 321313667}
     m_Modifications:
+    - target: {fileID: 1445985504, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
+      propertyPath: moveSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3974401499847040520, guid: 7fd563568f92d714ba16952e28c10610, type: 3}
       propertyPath: m_RootOrder
       value: 4
