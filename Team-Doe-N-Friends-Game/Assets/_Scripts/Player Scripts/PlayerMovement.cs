@@ -107,19 +107,6 @@ public class PlayerMovement : MonoBehaviour{
                     FMODUnity.RuntimeManager.PlayOneShot(Dash);
                     StartCoroutine(ConsumeDashCharge());
                 }
-                
-                // if (Input.GetKeyDown(KeyCode.A)&& dashCharges >0){ 
-                //     this.dashStart = Time.time; 
-                //     DashLeft();
-                //     FMODUnity.RuntimeManager.PlayOneShot(Dash);
-                //     StartCoroutine(ConsumeDashCharge());
-                // }
-                // else if (Input.GetKeyDown(KeyCode.D)&& dashCharges >0){
-                //     this.dashStart = Time.time;
-                //     DashRight();
-                //     FMODUnity.RuntimeManager.PlayOneShot(Dash);
-                //     StartCoroutine(ConsumeDashCharge());
-                // }
             }
         }
         
